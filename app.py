@@ -188,7 +188,11 @@ LICENSE_MODEL_DETECTION_DIR = "./license_plate_detector.pt"
 COCO_MODEL_DIR = "../models/yolov8n.pt"
 
 # Initialize OCR (this is lightweight until used)
-reader = PaddleOCR(use_angle_cls=True, lang='en')
+#reader = PaddleOCR(use_angle_cls=True, lang='en')
+@st.cache_resource
+def load_ocr():
+    return PaddleOCR(use_angle_cls=True, lang='en', show_log=False)
+reader = load_ocr()
 
 # === Header / Hero ===
 st.markdown('<div class="app-wrap">', unsafe_allow_html=True)
@@ -625,4 +629,5 @@ Now • {datetime.now().strftime('%B %d, %Y • %H:%M:%S IST')}
 </div>
 
 </div>
+
 """, unsafe_allow_html=True)
