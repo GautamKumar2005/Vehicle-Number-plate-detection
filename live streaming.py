@@ -12,13 +12,13 @@ import uuid
 from util import set_background, write_csv
 
 # Initialize models and settings
-LICENSE_MODEL_DETECTION_DIR = "License-Plate-Detection-with-YoloV8-and-EasyOCR\\models\\license_plate_detector.pt"
+LICENSE_MODEL_DETECTION_DIR = r"C:\Users\gauta\.project_ml\Streamlit-ANPR\license_plate_detector.pt"
 reader = easyocr.Reader(['en'], gpu=False)
 license_plate_detector = YOLO(LICENSE_MODEL_DETECTION_DIR)
 output_csv_path = "live_video_results.csv"
 
 # Set background
-set_background("License-Plate-Detection-with-YoloV8-and-EasyOCR\\imgs\\background.png")
+set_background(r"C:\Users\gauta\.project_ml\Streamlit-ANPR\background.png")
 
 # Helper function to read license plates
 def read_license_plate(license_plate_crop):
