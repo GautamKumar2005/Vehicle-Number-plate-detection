@@ -1,11 +1,11 @@
 streamlit==1.41.1
 ultralytics==8.3.53
 paddleocr==2.9.1
-paddlepaddle==2.6.2          # Required runtime for PaddleOCR (CPU version works on Streamlit Cloud)
-opencv-python==4.11.0.86
+paddlepaddle==2.6.2
+opencv-python-headless==4.11.0.86
 numpy==1.26.4
 Pillow==10.4.0
 pandas==2.2.3
 streamlit-webrtc==0.47.9
-av==12.3.0                    # Important: version 12+ has pre-built wheels → installs successfully on Streamlit Cloud
+av==12.3.0
 requests==2.32.3
